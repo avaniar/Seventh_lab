@@ -1,10 +1,10 @@
 fun main() {
-    val pathWrite = "C:\\Seventh_lab\\src\\main\\kotlin\\data.json"
+    val pathWrite = "C:\\Users\\admin\\IdeaProjects\\Seventh_lab3\\src\\main\\kotlin\\data.json"
     val serialize = SerializeShapes
     val shapeFactory = ShapeFactoryImpl()
     println("Data obtained")
-    println(WorkWithFiles.read(pathWrite))
-    val shapeList = serialize.decode(WorkWithFiles.read(pathWrite))
+    println(FileUtils.read(pathWrite))
+    val shapeList = serialize.decode(FileUtils.read(pathWrite)).toMutableList()
     shapeList.addAll(
         listOf(
             shapeFactory.createRandomShape(),
@@ -14,5 +14,5 @@ fun main() {
     )
     println("Modified data")
     println(serialize.encode(shapeList))
-    WorkWithFiles.write(pathWrite, serialize.encode(shapeList))
+    FileUtils.write(pathWrite, serialize.encode(shapeList))
 }

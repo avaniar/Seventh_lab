@@ -1,6 +1,6 @@
 import java.io.File
 
-object WorkWithFiles {
+object FileUtils {
 
     fun write(path: String, value: String) {
         File(path).writeText(value)

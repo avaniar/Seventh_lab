@@ -18,11 +18,11 @@ object SerializeShapes {
         }
     }
 
-    fun encode(shapes: MutableList<Shape>): String {
+    fun encode(shapes: List<Shape>): String {
         return json.encodeToString(shapes)
     }
 
-    fun decode(encodedShapes: String): MutableList<Shape> {
+    fun decode(encodedShapes: String): List<Shape> {
         return json.decodeFromString(encodedShapes)
     }
 }
